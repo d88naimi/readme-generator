@@ -15,17 +15,19 @@ function promptUser() {
 }
 
 function getUser(username) {
-  return axios.get(`https://api.github.com/users/${username}`).catch(err => {
-    console.log(`User not found`);
-    process.exit(1);
-  });
+  return axios
+    .get(`https://api.github.com/users/${username}/repos?per_page=100`)
+    .catch(err => {
+      console.log(`User not found`);
+      process.exit(1);
+    });
 }
 
-function generateHTML(avatar) {
-  return `
-  # User: ${avatar.data.login}
-  ![${avatar.data.login} avatar](${avatar.data.avatar_url})
-  `;
+function generateHTML(userinfo) {
+  userinfo.map(
+    repo => `
+    #${repo.name}`
+  );
 }
 
 async function init() {
