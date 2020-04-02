@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Const Let Arrow Functions</h1>
+
+        <h3>const</h3>
+        <ul class="const">
+            <li>`const` means that the identifier can’t be reassigned.</li>
+        </ul>
+
+        <h3>let</h3>
+        <ul class="let">
+            <li>`let` is a signal that the variable may be reassigned, such as a counter in a loop, or a value swap in
+                an algorithm.</li>
+        </ul>
+
+        <p>Best Practice is to try not to create global variables</p>
+
+        <img src="https://www.constletvar.com/const-vs-let-vs-var.png" alt="image" height="300" width="400">
+
+
+        <p class="link">
+            <a href="https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75">Const & Let</a>
+        </p>
+        <h3 class="arrow">Arrow Functions</h3>
+        <ul>
+            <li>Arrow functions are anonymous and change the way `this` binds in functions.</li>
+            <li>One common use case for arrow functions is array manipulation</li>
+            <li>The other benefit of using arrow functions with promises/callbacks is that it reduces the confusion
+                surrounding the this
+                keyword.</li>
+
+            <li><a href="https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/">Fat Arrow</a>
+            <li><a href="https://medium.com/tfogo/advantages-and-pitfalls-of-arrow-functions-a16f0835799e">Fat Arrow</a>
+            </li>
+        </ul>
+
+
+    </div>
+    <script>
+        // const age = '100'; // global scope
+
+        // function go() {
+        //     const myAge = 200;
+        //     const hair = 'black';
+        //     console.log(age);
+        // } // think of curly brackets as a fence blocking in your const and let variables. 
+
+        // console.log(myAge);
+        // console.log(hair);
+
+        // go();
+
+        // ----------------------------------------------------------------------------------------------------
+
+        // function loopy() {
+        //     for (let i = 0; i < 10; i++) {
+        //         console.log(i);
+        //     }
+        // }
+        // loopy();
+        // ----------------------------------------------------------------------------------------------------
+
+        // Dog function
+        // const dog = 'snickers';
+
+        // function logDog() {
+        //     console.log(dog);
+        // }
+
+        // function go() {
+        //     const dog = 'sunny';
+        //     logDog('sunny');
+        // }
+
+        // go();
+        // ----------------------------------------------------------------------------------------------------
+
+        //SAME EXAMPLE passed with a parameter and argument
+        // const dog = 'snickers';
+
+        // function logDog(dog) {
+        //     console.log(dog);
+        // }
+
+        // function go() {
+        //     const dog = 'sunny';
+        //     logDog('Rufus');
+        // }
+
+        // go();
+
+        // ----------------------------------------------------------------------------------------------------
+        //ARROW FUNCTIONS are anonymous function
+        // ES5
+        const inchToCM = inches => inches * 2.54;
+
+        console.log(inchToCM(5));
+
+        // // ES6 // Explicit return are for when you want to return as soon as possible, without running the rest of the method
+        // const inchToCM = (inches) => {
+        //     return inches * 2.54;
+        // }
+        // console.log(inchToCM(5));
+
+        // // ES6 // Implicit return are for when you want to return as soon as possible, without running the rest of the method
+        // const inchToCM = (inches) => inches * 2.54;
+        // console.log(inchToCM(5));
+        // ----------------------------------------------------------------------------------------------------
+        // ES5
+        // var addES6 = (x, y = 5) => x + y;
+
+        // // ES6 // If you have more than one parameter then you MUST use parenthesis 
+        // const addES6 = (x, y) => { return x + y };
+        // ----------------------------------------------------------------------------------------------------
+        // //returning an OBJECT   
+        // //ES5
+        // const isCool = (first, last) => {
+        //     const person = {
+        //         name: ` first: ${first}  last: ${last}`,
+        //         age: 0
+        //     }
+        //     return person;
+        // }
+        // console.log(isCool("david", "naimi"));
+        // //ES6
+        // const isCool = (first, last) => {
+        //     const person = {
+        //         name: `${first} ${last}`,
+        //         age: 0
+        //     }
+        //     return person;
+        // }
+        // ----------------------------------------------------------------------------------------------------
+        //METHODS
+        //ES5
+        // const david = {
+        //     name: 'david ',
+        //     sayHi: function () {
+        //         console.log(this);
+        //         console.log('Hey ' + this.name);
+        //         return 'hey ' + this.name
+        //     }
+        // }
+        // console.log(david.sayHi());
+        // ----------------------------------------------------------------------------------------------------
+        // ES6
+        // const david = {
+        //     name: 'david ',
+        //     sayHi: () => { // remember the block scope
+        //         console.log(this);
+        //         console.log("hey" + this.name);
+        //         return "hey" + this.name
+        //     }
+        // }
+        // console.log(david.sayHi());
+        // // ----------------------------------------------------------------------------------------------------
+        // const david = {
+        //     name: 'david ',
+        //     sayHi: function () {
+        //         setTimeout(() => {
+        //             alert("hey " + this.name)
+        //         }, 500);
+        //     }
+        // }
+        // console.log(david.sayHi());
+
+    </script>
+</body>
+
+</html>
