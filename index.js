@@ -22,14 +22,14 @@ function getUser(username) {
 }
 
 function generateHTML(avatar) {
+  const { data } = avatar;
   return `
   ## Readme generator built through node 
-  # User: ${avatar.data.login}
-  ![${avatar.data.login} avatar](${avatar.data.avatar_url})
+  # User: ${data.login}
+  ![${data.login} avatar](${data.avatar_url})
   ## Installation
-    '''bash
-  npm install 
-  '''
+    npm install
+  # Have a Great Day  
   `;
 }
 
