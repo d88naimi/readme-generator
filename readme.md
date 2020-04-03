@@ -6,5 +6,6 @@
 
 ## Installation
 
-'''npm install
+    ''' bash npm install
+
 '''
